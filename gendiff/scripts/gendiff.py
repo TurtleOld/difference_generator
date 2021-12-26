@@ -1,17 +1,17 @@
 #! /usr/bin/env python
 
 import argparse
-import json
-
-parser = argparse.ArgumentParser(prog='gendiff', description='Generate diff')
-parser.add_argument('first_file')
-parser.add_argument('second_file')
-parser.add_argument('-f', '--format', type=str, help='set format of output')
-
-args = parser.parse_args()
-print(args.first_file(args.second_file))
+from gendiff.generate_diff import generate_diff
 
 
-def generate_diff(filepath1, filepath2):
-    file1 = json.load(filepath1)
-    file2 = json.load(filepath2)
+def main():
+    parser = argparse.ArgumentParser(description='Generate diff')
+    parser.add_argument('first_file', type=str)
+    parser.add_argument('second_file', type=str)
+    parser.add_argument('-f', '--format', help='set format of output')
+    args = parser.parse_args()
+    print(generate_diff(args.first_file, args.second_file))
+
+
+if __name__ == '__main__':
+    main()
