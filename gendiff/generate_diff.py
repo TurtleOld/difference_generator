@@ -8,4 +8,3 @@ def generate_diff(filepath1, filepath2):
     keys = sorted(file1.keys() | file2.keys())
     for key in keys:
         return key
-
