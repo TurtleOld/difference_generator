@@ -3,5 +3,5 @@
 [![Actions Status](https://github.com/TurtleOld/python-project-lvl2/workflows/gendiff/badge.svg)](https://github.com/TurtleOld/python-project-lvl2/actions)
 
 
-Asciinema   
-[![asciicast](https://asciinema.org/a/459870.svg)](https://asciinema.org/a/459870)
+Asciinema One
+[![asciicast](https://asciinema.org/a/459891.svg)](https://asciinema.org/a/459891)
