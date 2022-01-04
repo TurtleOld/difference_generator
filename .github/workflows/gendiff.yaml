@@ -35,3 +35,6 @@ jobs:
 
       - name: Start linter
         run: make lint
+        
+      - name: Start Tests
+        run: make test
