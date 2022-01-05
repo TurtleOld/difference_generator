@@ -8,10 +8,11 @@ TYPE_YML_OR_YAML = ('.yml', '.yaml')
 def determining_file_format(file_path):
     if file_path.endswith(TYPE_JSON):
         format_file = json.load(open(file_path))
-        return format_file
+
     if file_path.endswith(TYPE_YML_OR_YAML):
         format_file = yaml.safe_load(open(file_path))
-        return format_file
+
+    return format_file
 
 
 def finding_difference(file_path1, file_path2):
