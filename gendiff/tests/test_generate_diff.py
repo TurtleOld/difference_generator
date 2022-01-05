@@ -2,10 +2,10 @@ from gendiff import generate_diff
 from fixtures.result import result
 
 
-file_json1 = 'file1.json'
-file_json2 = 'file2.json'
-file_yaml1 = 'file1.yaml'
-file_yaml2 = 'file2.yaml'
+file_json1 = 'gendiff/tests/fixtures/file1.json'
+file_json2 = 'gendiff/tests/fixtures/file2.json'
+file_yaml1 = 'gendiff/tests/fixtures/file1.yaml'
+file_yaml2 = 'gendiff/tests/fixtures/file2.yaml'
 
 
 def test_generate_diff():
