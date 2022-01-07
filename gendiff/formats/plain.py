@@ -32,8 +32,10 @@ def format_plain(diff, path=None):
 
 
 def converted_value(value):
+    if type(value) is int:
+        return '{0}'.format(value)
     if type(value) is str:
-        return "'{}'".format(value)
+        return "'{0}'".format(value)
     if type(value) is tuple:
         if type(value[0]) is str:
             return "'{}'".format(value[0])
