@@ -44,7 +44,7 @@ def get_value(item, depth):
     return '\n'.join(result)
 
 
-def get_stylish(tree, depth=1):
+def format_stylish(tree, depth=1):
     result_data = ['{']
     open_indent, close_indent = get_indent(depth)
 
@@ -76,7 +76,7 @@ def get_stylish(tree, depth=1):
             result_data.append(get_string(open_indent,
                                           SYMBOL_UNCHANGED,
                                           key,
-                                          get_stylish(child, depth + 1)))
+                                          format_stylish(child, depth + 1)))
 
         else:
             result_data.append(get_string(open_indent,
