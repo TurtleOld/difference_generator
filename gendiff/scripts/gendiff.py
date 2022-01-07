@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-from gendiff.parse import parsing
+from gendiff.engine.parse import parsing
 
 
 def main():

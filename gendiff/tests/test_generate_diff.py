@@ -1,44 +1,43 @@
 from gendiff import generate_diff
-from gendiff.formats import stylish, plain
 
-file_json1 = 'gendiff/tests/fixtures/file1.json'
-file_json2 = 'gendiff/tests/fixtures/file2.json'
-file_yaml1 = 'gendiff/tests/fixtures/file1.yaml'
-file_yaml2 = 'gendiff/tests/fixtures/file2.yaml'
-file_yml1 = 'gendiff/tests/fixtures/file1.yml'
-file_yml2 = 'gendiff/tests/fixtures/file2.yml'
+FILE_JSON1 = 'gendiff/tests/fixtures/file1.json'
+FILE_JSON2 = 'gendiff/tests/fixtures/file2.json'
+FILE_YAML1 = 'gendiff/tests/fixtures/file1.yaml'
+FILE_YAML2 = 'gendiff/tests/fixtures/file2.yaml'
+FILE_YML1 = 'gendiff/tests/fixtures/file1.yml'
+FILE_YML2 = 'gendiff/tests/fixtures/file2.yml'
 
-recursion_file_json1 = 'gendiff/tests/fixtures/file1_recursion.json'
-recursion_file_json2 = 'gendiff/tests/fixtures/file2_recursion.json'
-recursion_file_yaml1 = 'gendiff/tests/fixtures/file1_recursion.yaml'
-recursion_file_yaml2 = 'gendiff/tests/fixtures/file2_recursion.yaml'
+RECURSION_FILE_JSON1 = 'gendiff/tests/fixtures/file1_recursion.json'
+RECURSION_FILE_JSON2 = 'gendiff/tests/fixtures/file2_recursion.json'
+RECURSION_FILE_YAML1 = 'gendiff/tests/fixtures/file1_recursion.yaml'
+RECURSION_FILE_YAML2 = 'gendiff/tests/fixtures/file2_recursion.yaml'
 
-expected_result = 'gendiff/tests/fixtures/result.txt'
-expected_recursion_result = 'gendiff/tests/fixtures/recursion_result.txt'
-expected_plain_result = 'gendiff/tests/fixtures/plain_result.txt'
+EXPECTED_RESULT = 'gendiff/tests/fixtures/result.txt'
+EXPECTED_RECURSION_RESULT = 'gendiff/tests/fixtures/recursion_result.txt'
+EXPECTED_PLAIN_RESULT = 'gendiff/tests/fixtures/plain_result.txt'
 
-diff_json = generate_diff(file_json1, file_json2)
-diff_yaml = generate_diff(file_yaml1, file_yaml2)
-diff_yml = generate_diff(file_yml1, file_yml2)
-recursion_diff_json = generate_diff(recursion_file_json1, recursion_file_json2)
-recursion_diff_yaml = generate_diff(recursion_file_yaml1, recursion_file_yaml2)
-plain_diff = generate_diff(recursion_file_yaml1, recursion_file_yaml2, 'plain')
-stylish_diff = generate_diff(recursion_file_yaml1,
-                             recursion_file_yaml2,
+diff_json = generate_diff(FILE_JSON1, FILE_JSON2)
+diff_yaml = generate_diff(FILE_YAML1, FILE_YAML2)
+diff_yml = generate_diff(FILE_YML1, FILE_YML2)
+recursion_diff_json = generate_diff(RECURSION_FILE_JSON1, RECURSION_FILE_JSON2)
+recursion_diff_yaml = generate_diff(RECURSION_FILE_YAML1, RECURSION_FILE_YAML2)
+plain_diff = generate_diff(RECURSION_FILE_YAML1, RECURSION_FILE_YAML2, 'plain')
+stylish_diff = generate_diff(RECURSION_FILE_YAML1,
+                             RECURSION_FILE_YAML2,
                              'stylish')
 
 
 def test_generate_diff():
-    assert diff_json == open(expected_result, 'r').read()
-    assert diff_yaml == open(expected_result, 'r').read()
-    assert diff_yml == open(expected_result, 'r').read()
-    assert recursion_diff_json == open(expected_recursion_result, 'r').read()
-    assert recursion_diff_yaml == open(expected_recursion_result, 'r').read()
+    assert diff_json == open(EXPECTED_RESULT, 'r').read()
+    assert diff_yaml == open(EXPECTED_RESULT, 'r').read()
+    assert diff_yml == open(EXPECTED_RESULT, 'r').read()
+    assert recursion_diff_json == open(EXPECTED_RECURSION_RESULT, 'r').read()
+    assert recursion_diff_yaml == open(EXPECTED_RECURSION_RESULT, 'r').read()
 
 
 def test_plain_format_diff():
-    assert plain_diff == open(expected_plain_result, 'r').read()
+    assert plain_diff == open(EXPECTED_PLAIN_RESULT, 'r').read()
 
 
 def test_stylish_diff():
-    assert stylish_diff == open(expected_recursion_result, 'r').read()
+    assert stylish_diff == open(EXPECTED_RECURSION_RESULT, 'r').read()

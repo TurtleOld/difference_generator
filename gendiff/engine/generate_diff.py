@@ -1,4 +1,4 @@
-from gendiff.finding_difference import determining_file_format,\
+from gendiff.engine.finding_difference import determining_file_format,\
     creating_difference
 from gendiff.formats.styles import FORMATS
 

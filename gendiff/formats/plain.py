@@ -1,5 +1,5 @@
 import json
-from gendiff import finding_difference
+from gendiff.engine import finding_difference
 
 
 def format_plain(diff, path=None):

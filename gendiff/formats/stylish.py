@@ -1,4 +1,4 @@
-from gendiff import finding_difference
+from gendiff.engine import finding_difference
 
 COUNT_INDENT = 4
 SYMBOL_INDENT = ' '
