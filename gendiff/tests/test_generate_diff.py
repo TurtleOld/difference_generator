@@ -23,6 +23,9 @@ diff_yaml = generate_diff(FILE_YAML1, FILE_YAML2)
 diff_yml = generate_diff(FILE_YML1, FILE_YML2)
 recursion_diff_json = generate_diff(RECURSION_FILE_JSON1, RECURSION_FILE_JSON2)
 recursion_diff_yaml = generate_diff(RECURSION_FILE_YAML1, RECURSION_FILE_YAML2)
+plain_diff_json1 = generate_diff(FILE_JSON1,
+                                 FILE_JSON2,
+                                 'plain')
 plain_diff_yaml = generate_diff(RECURSION_FILE_YAML1,
                                 RECURSION_FILE_YAML2,
                                 'plain')
@@ -48,7 +51,7 @@ def test_generate_diff():
 def test_plain_format_diff():
     assert plain_diff_yaml == open(EXPECTED_PLAIN_RECURSION_RESULT, 'r').read()
     assert plain_diff_json == open(EXPECTED_PLAIN_RECURSION_RESULT, 'r').read()
-    assert plain_diff_json == open(EXPECTED_PLAIN_RESULT, 'r').read()
+    assert plain_diff_json1 == open(EXPECTED_PLAIN_RESULT, 'r').read()
 
 
 def test_stylish_diff():
