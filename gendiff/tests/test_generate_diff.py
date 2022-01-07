@@ -14,9 +14,14 @@ RECURSION_FILE_YAML2 = 'gendiff/tests/fixtures/file2_recursion.yaml'
 
 EXPECTED_RESULT = 'gendiff/tests/fixtures/result.txt'
 EXPECTED_RECURSION_RESULT = 'gendiff/tests/fixtures/recursion_result.txt'
+
 EXPECTED_PLAIN_RECURSION_RESULT = \
     'gendiff/tests/fixtures/plain_recursion_result.txt'
 EXPECTED_PLAIN_RESULT = 'gendiff/tests/fixtures/plain_result.txt'
+
+EXPECTED_JSON_RESULT = 'gendiff/tests/fixtures/json_result_json.txt'
+EXPECTED_RECURSION_JSON_RESULT = \
+    'gendiff/tests/fixtures/json_recursion_result_json.txt'
 
 diff_json = generate_diff(FILE_JSON1, FILE_JSON2)
 diff_yaml = generate_diff(FILE_YAML1, FILE_YAML2)
@@ -38,6 +43,12 @@ stylish_diff_yaml = generate_diff(RECURSION_FILE_YAML1,
 stylish_diff_json = generate_diff(RECURSION_FILE_JSON1,
                                   RECURSION_FILE_JSON2,
                                   'stylish')
+json_diff_json = generate_diff(FILE_JSON1,
+                               FILE_JSON2,
+                               'json')
+json_recursion_diff_json = generate_diff(RECURSION_FILE_JSON1,
+                                         RECURSION_FILE_JSON2,
+                                         'json')
 
 
 def test_generate_diff():
@@ -57,3 +68,9 @@ def test_plain_format_diff():
 def test_stylish_diff():
     assert stylish_diff_yaml == open(EXPECTED_RECURSION_RESULT, 'r').read()
     assert stylish_diff_json == open(EXPECTED_RECURSION_RESULT, 'r').read()
+
+
+def test_json_diff():
+    assert json_diff_json == open(EXPECTED_JSON_RESULT, 'r').read()
+    assert json_recursion_diff_json == open(
+        EXPECTED_RECURSION_JSON_RESULT, 'r').read()
