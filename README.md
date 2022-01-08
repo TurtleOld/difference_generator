@@ -6,7 +6,12 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e4b6886b9fd5cee375a9/test_coverage)](https://codeclimate.com/github/TurtleOld/python-project-lvl2/test_coverage)
 
 # Welcome to Project "Generate Differences"  
-##### _This second project the platform [Hexlet](https://ru.hexlet.io)_ writes on programming language Python
+##### _This is the second [Hexlet](https://ru.hexlet.io) platform project written in the Python programming language_
+
+
+### To install the package  
+    python -m pip install git+https://github.com/TurtleOld/python-project-lvl2
+
 #### **STYLISH** (_default format_)    
 [![asciicast](https://asciinema.org/a/459891.svg)](https://asciinema.org/a/459891)
 [![asciicast](https://asciinema.org/a/460011.svg)](https://asciinema.org/a/460011)    
