@@ -10,7 +10,7 @@
 
 > Minimum requirements to run the package:   
 > 
-> Ubuntu 20.04+. In other operating systems, the installation and operation of the package and games are not guaranteed.
+> Ubuntu 20.04+. In other operating systems, the installation and operation of the package are not guaranteed.
 
 > The package can work with both relative and absolute paths to files
 
