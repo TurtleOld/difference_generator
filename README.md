@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e4b6886b9fd5cee375a9/maintainability)](https://codeclimate.com/github/TurtleOld/python-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e4b6886b9fd5cee375a9/test_coverage)](https://codeclimate.com/github/TurtleOld/python-project-lvl2/test_coverage)
 
-# Welcome to Project "Generate Differences"  
+# Project "Generate Differences"  
 ##### _This is the second [Hexlet](https://ru.hexlet.io) platform project written in the Python programming language_
 
 > Minimum requirements to run the package:   
@@ -17,7 +17,7 @@
 ### To install the package  
     python -m pip install git+https://github.com/TurtleOld/python-project-lvl2
 
-### How to use the program - gendiff -h
+### How to use the package - gendiff -h
     usage: gendiff [-h] [-f FORMAT] first_file second_file
 
     Generate diff
@@ -30,7 +30,7 @@
       -h, --help            show this help message and exit
       -f FORMAT, --format FORMAT
                         set format of output
-## Demonstration of the capabilities of this program
+## Demonstration of the capabilities of this package
 #### **STYLISH** (_default format_)  
 [![asciicast](https://asciinema.org/a/459891.svg)](https://asciinema.org/a/459891)  
 [![asciicast](https://asciinema.org/a/460011.svg)](https://asciinema.org/a/460011)      
