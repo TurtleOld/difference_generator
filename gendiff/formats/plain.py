@@ -32,18 +32,18 @@ def format_plain(diff, path=None):
 
 
 def converted_value(value):
-    if type(value) is int:
-        return '{0}'.format(value)
-    if type(value) is str:
-        return "'{0}'".format(value)
     if type(value) is tuple:
         if type(value[0]) is str:
             return "'{}'".format(value[0])
-        if type(value[0]) is dict:
+        elif type(value[0]) is dict:
             return '[complex value]'
-        if value[0] in [True, False, None]:
+        else:
             return json.dumps(value[0])
-    if type(value) is dict:
+    elif type(value) is int:
+        return '{0}'.format(value)
+    elif type(value) is str:
+        return "'{0}'".format(value)
+    elif type(value) is dict:
         return '[complex value]'
-    if value in [True, False, None]:
+    else:
         return json.dumps(value)
