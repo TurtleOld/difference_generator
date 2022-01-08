@@ -1,3 +1,5 @@
+# Project "Difference Generator"  
+
 #### Hexlet tests and linter status:
 [![Actions Status](https://github.com/TurtleOld/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/TurtleOld/python-project-lvl2/actions)
 #### Project tests and linter status, maintainability and coverage
@@ -5,7 +7,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e4b6886b9fd5cee375a9/maintainability)](https://codeclimate.com/github/TurtleOld/python-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e4b6886b9fd5cee375a9/test_coverage)](https://codeclimate.com/github/TurtleOld/python-project-lvl2/test_coverage)
 
-# Project "Difference Generator"  
+
 ##### _This is the second [Hexlet](https://ru.hexlet.io) platform project written in Python programming language_
 
 > Minimum requirements to launch the package:   
