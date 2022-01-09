@@ -3,17 +3,27 @@ from gendiff.engine import finding_difference
 
 
 def format_plain(diff, path=None):
+    """
+    Функция по переводу словаря данных в строки с указанием тех данных,
+    которые изменились.
+    :param diff: Переданный словарь.
+    :param path: Путь ключей.
+    :return: строки с данными
+    """
     if path is None:
         path = []
 
     result = []
 
     for items in diff:
+
         status = finding_difference.get_status(items)
         key = finding_difference.get_key(items)
         value = finding_difference.get_value(items)
         child = finding_difference.get_child(items)
+
         path.append(key)
+
         if status == finding_difference.VALUE_DELETED:
             result.append("Property '{0}' was removed".format('.'.join(path)))
         if status == finding_difference.VALUE_ADDED:
@@ -32,6 +42,11 @@ def format_plain(diff, path=None):
 
 
 def converted_value(value):
+    """
+    Функция по конвертации данных.
+    :param value: Значение словаря.
+    :return: нужный формат.
+    """
     if type(value) is tuple:
         if type(value[0]) is str:
             collecting = "'{}'".format(value[0])

@@ -12,6 +12,9 @@ VERSION_NUMBER = '{0} 1.0'.format(DESCRIPTION)
 
 
 def parsing():
+    """
+    Функция по созданию справки, парсингу и выводу в консоль конечных данных.
+    """
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('first_file', type=str)
     parser.add_argument('second_file', type=str)

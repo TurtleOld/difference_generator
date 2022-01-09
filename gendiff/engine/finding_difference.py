@@ -12,6 +12,11 @@ VALUE_CHILD = 'child'
 
 
 def determining_file_format(file_path):
+    """
+    Функция по определению формата(расширение) переданного файла.
+    :param file_path: Путь до файла
+    :return: Расширение переданного файла
+    """
     if file_path.endswith(TYPE_JSON):
         format_file = json.load(open(file_path))
         return format_file
@@ -21,6 +26,9 @@ def determining_file_format(file_path):
 
 
 def creating_difference_segment(status, key, value1, value2=None, child=None):
+    """
+    Функция аккумулятор ключей.
+    """
     collected_data = {
         'status': status,
         'key': key,
@@ -32,6 +40,12 @@ def creating_difference_segment(status, key, value1, value2=None, child=None):
 
 
 def creating_difference(file_path1, file_path2):
+    """
+    Функция создания разницы между данными двух файлов.
+    :param file_path1: Путь до файла.
+    :param file_path2: Путь до файла.
+    :return: Список с результатом.
+    """
     keys1 = file_path1.keys()
     keys2 = file_path2.keys()
     keys = keys1 | keys2
@@ -69,17 +83,21 @@ def creating_difference(file_path1, file_path2):
 
 
 def get_status(collected_data):
+    """ Функция получения ключа Статус"""
     return collected_data.get('status')
 
 
 def get_key(collected_data):
+    """ Функция получения ключа Ключ"""
     return collected_data.get('key')
 
 
 def get_value(collected_data):
+    """ Функция получения ключей со значениями"""
     value = (collected_data.get('value1'), collected_data.get('value2'))
     return value
 
 
 def get_child(collected_data):
+    """ Функция получения ключа Child(Ребёнок)"""
     return collected_data.get('child', None)

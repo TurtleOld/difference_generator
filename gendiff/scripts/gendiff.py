@@ -4,6 +4,7 @@ from gendiff.engine.parse import parsing
 
 
 def main():
+    """ Главная функция по запуску пакета. """
     parsing()
 
 

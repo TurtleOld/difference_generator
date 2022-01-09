@@ -11,6 +11,9 @@ SYMBOL_UNCHANGED = ' '
 
 
 def get_indent(depth):
+    """
+    Функция по определению начального и конечного отступа.
+    """
     open_indent = SYMBOL_INDENT * (COUNT_INDENT * depth - 2)
     close_indent = SYMBOL_INDENT * (COUNT_INDENT * (depth - 1))
 
@@ -18,11 +21,13 @@ def get_indent(depth):
 
 
 def get_string(indent, symbol, key, value):
+    """ Получение строки. """
     return TEMPLATE_STRING.format(indent=indent, symbol=symbol, key=key,
                                   value=value)
 
 
 def get_value(item, depth):
+    """ Получение значения. """
     result = []
 
     open_indent, close_indent = get_indent(depth)
@@ -45,6 +50,7 @@ def get_value(item, depth):
 
 
 def format_stylish(tree, depth=1):
+    """ Построение формата stylish. """
     result_data = ['{']
     open_indent, close_indent = get_indent(depth)
 
