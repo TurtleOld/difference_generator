@@ -1,27 +1,27 @@
 from gendiff import generate_diff
 
-FILE_JSON1 = 'gendiff/tests/fixtures/file1.json'
-FILE_JSON2 = 'gendiff/tests/fixtures/file2.json'
-FILE_YAML1 = 'gendiff/tests/fixtures/file1.yaml'
-FILE_YAML2 = 'gendiff/tests/fixtures/file2.yaml'
-FILE_YML1 = 'gendiff/tests/fixtures/file1.yml'
-FILE_YML2 = 'gendiff/tests/fixtures/file2.yml'
+FILE_JSON1 = 'tests/fixtures/file1.json'
+FILE_JSON2 = 'tests/fixtures/file2.json'
+FILE_YAML1 = 'tests/fixtures/file1.yaml'
+FILE_YAML2 = 'tests/fixtures/file2.yaml'
+FILE_YML1 = 'tests/fixtures/file1.yml'
+FILE_YML2 = 'tests/fixtures/file2.yml'
 
-RECURSION_FILE_JSON1 = 'gendiff/tests/fixtures/file1_recursion.json'
-RECURSION_FILE_JSON2 = 'gendiff/tests/fixtures/file2_recursion.json'
-RECURSION_FILE_YAML1 = 'gendiff/tests/fixtures/file1_recursion.yaml'
-RECURSION_FILE_YAML2 = 'gendiff/tests/fixtures/file2_recursion.yaml'
+RECURSION_FILE_JSON1 = 'tests/fixtures/file1_recursion.json'
+RECURSION_FILE_JSON2 = 'tests/fixtures/file2_recursion.json'
+RECURSION_FILE_YAML1 = 'tests/fixtures/file1_recursion.yaml'
+RECURSION_FILE_YAML2 = 'tests/fixtures/file2_recursion.yaml'
 
-EXPECTED_RESULT = 'gendiff/tests/fixtures/result.txt'
-EXPECTED_RECURSION_RESULT = 'gendiff/tests/fixtures/recursion_result.txt'
+EXPECTED_RESULT = 'tests/fixtures/result.txt'
+EXPECTED_RECURSION_RESULT = 'tests/fixtures/recursion_result.txt'
 
 EXPECTED_PLAIN_RECURSION_RESULT = \
-    'gendiff/tests/fixtures/plain_recursion_result.txt'
-EXPECTED_PLAIN_RESULT = 'gendiff/tests/fixtures/plain_result.txt'
+    'tests/fixtures/plain_recursion_result.txt'
+EXPECTED_PLAIN_RESULT = 'tests/fixtures/plain_result.txt'
 
-EXPECTED_JSON_RESULT = 'gendiff/tests/fixtures/json_result_json.txt'
+EXPECTED_JSON_RESULT = 'tests/fixtures/json_result_json.txt'
 EXPECTED_RECURSION_JSON_RESULT = \
-    'gendiff/tests/fixtures/json_recursion_result_json.txt'
+    'tests/fixtures/json_recursion_result_json.txt'
 
 diff_json = generate_diff(FILE_JSON1, FILE_JSON2)
 diff_yaml = generate_diff(FILE_YAML1, FILE_YAML2)
