@@ -24,4 +24,3 @@ def parsing_cli_arguments():
                         default='stylish')
     args = parser.parse_args()
     print(generate_diff(args.first_file, args.second_file, args.format))
-
