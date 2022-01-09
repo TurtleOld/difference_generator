@@ -7,3 +7,9 @@ FORMATS = {
     'plain': plain.format_plain,
     'json': json.format_json
 }
+
+
+FORMAT_FILES = {
+    'json': '.json',
+    'yaml_yml': ('.yml', '.yaml')
+}

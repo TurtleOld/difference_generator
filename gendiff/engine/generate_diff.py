@@ -1,13 +1,7 @@
 """ Extract content files and main function package - generate_diff """
 from gendiff.engine.finding_difference import creating_difference
-from gendiff.formats.styles import FORMATS
+from gendiff.formats.formats import FORMATS, FORMAT_FILES
 from gendiff.engine.parser_string import parsing_string_representation
-
-
-FORMAT_FILES = {
-    'json': '.json',
-    'yaml_yml': ('.yml', '.yaml')
-}
 
 
 def extract_content_files(file_path):
