@@ -1,28 +1,8 @@
-import json
-import yaml
-
-TYPE_JSON = '.json'
-TYPE_YML_OR_YAML = ('.yml', '.yaml')
-
 VALUE_DELETED = 'deleted'
 VALUE_ADDED = 'added'
 VALUE_CHANGED = 'changed'
 VALUE_UNCHANGED = 'unchanged'
 VALUE_CHILD = 'child'
-
-
-def determining_file_format(file_path):
-    """
-    Функция по определению формата(расширение) переданного файла.
-    :param file_path: Путь до файла
-    :return: Расширение переданного файла
-    """
-    if file_path.endswith(TYPE_JSON):
-        format_file = json.load(open(file_path))
-        return format_file
-    if file_path.endswith(TYPE_YML_OR_YAML):
-        format_file = yaml.safe_load(open(file_path))
-        return format_file
 
 
 def creating_difference_segment(status, key, value1, value2=None, child=None):

@@ -1,7 +1,6 @@
 import argparse
 from gendiff import generate_diff
 
-
 DESCRIPTION = 'Difference generator'
 FORMAT_FLAG_1 = '-f'
 FORMAT_FLAG_2 = '--format'
@@ -11,7 +10,7 @@ VERSION_STRING_2 = '--version'
 VERSION_NUMBER = '{0} 1.0'.format(DESCRIPTION)
 
 
-def parsing():
+def parsing_cli_arguments():
     """
     Функция по созданию справки, парсингу и выводу в консоль конечных данных.
     """
@@ -25,3 +24,6 @@ def parsing():
                         default='stylish')
     args = parser.parse_args()
     print(generate_diff(args.first_file, args.second_file, args.format))
+
+
+

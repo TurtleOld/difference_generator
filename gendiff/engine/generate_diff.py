@@ -1,10 +1,32 @@
-from gendiff.engine.finding_difference import determining_file_format,\
-    creating_difference
+from gendiff.engine.finding_difference import creating_difference
 from gendiff.formats.styles import FORMATS
+from gendiff.engine.parser_string import parsing_string_representation
+
+
+FORMAT_FILES = {
+    'json': '.json',
+    'yaml_yml': ('.yml', '.yaml')
+}
+
+
+def extract_content_files(file_path):
+    """
+    ?
+    :param file_path: Путь до файла.
+    :return: Расширение переданного файла
+    """
+    if file_path.endswith(FORMAT_FILES['json']):
+        with open(file_path, 'r') as file:
+            result = file.read()
+        return parsing_string_representation(result)
+    if file_path.endswith(FORMAT_FILES['yaml_yml']):
+        with open(file_path, 'r') as file:
+            result = file.read()
+        return parsing_string_representation(result)
 
 
 def generate_diff(file_path1, file_path2, style='stylish'):
     """ Главная функция по выводу конечных данных. """
-    file1 = determining_file_format(file_path1)
-    file2 = determining_file_format(file_path2)
+    file1 = extract_content_files(file_path1)
+    file2 = extract_content_files(file_path2)
     return FORMATS[style](creating_difference(file1, file2))

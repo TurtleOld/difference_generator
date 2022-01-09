@@ -1,11 +1,11 @@
 #! /usr/bin/env python
 
-from gendiff.engine.parse import parsing
+from gendiff.engine.parse import parsing_cli_arguments
 
 
 def main():
     """ Главная функция по запуску пакета. """
-    parsing()
+    parsing_cli_arguments()
 
 
 if __name__ == '__main__':
