@@ -35,10 +35,7 @@ jobs:
 
       - name: Start linter
         run: make lint
-        
-      - name: Start Tests
-        run: make test
-        
+
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.4
         env:
