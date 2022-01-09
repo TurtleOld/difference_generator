@@ -1,3 +1,4 @@
+""" Extract content files and main function package - generate_diff """
 from gendiff.engine.finding_difference import creating_difference
 from gendiff.formats.styles import FORMATS
 from gendiff.engine.parser_string import parsing_string_representation
@@ -11,7 +12,7 @@ FORMAT_FILES = {
 
 def extract_content_files(file_path):
     """
-    ?
+    Извлечение содержимого из файла.
     :param file_path: Путь до файла.
     :return: Расширение переданного файла
     """

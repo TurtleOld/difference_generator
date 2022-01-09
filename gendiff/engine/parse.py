@@ -1,3 +1,4 @@
+""" Parsing command line arguments. """
 import argparse
 from gendiff import generate_diff
 
@@ -12,7 +13,7 @@ VERSION_NUMBER = '{0} 1.0'.format(DESCRIPTION)
 
 def parsing_cli_arguments():
     """
-    Функция по созданию справки, парсингу и выводу в консоль конечных данных.
+    Функция по парсингу аргументов командой строки
     """
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('first_file', type=str)

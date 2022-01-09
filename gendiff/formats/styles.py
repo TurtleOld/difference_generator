@@ -1,3 +1,4 @@
+""" Formats dictionary """
 from gendiff.formats import stylish, plain, json
 
 

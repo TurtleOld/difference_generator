@@ -1,3 +1,4 @@
+""" Plain Format """
 import json
 from gendiff.engine import finding_difference
 

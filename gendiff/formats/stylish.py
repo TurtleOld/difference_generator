@@ -1,3 +1,4 @@
+""" Stylish Format """
 from gendiff.engine import finding_difference
 
 COUNT_INDENT = 4

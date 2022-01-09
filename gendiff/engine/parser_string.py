@@ -1,3 +1,4 @@
+""" Function of string representation of data from files """
 import json
 import yaml
 

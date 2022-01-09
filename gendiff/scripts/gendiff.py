@@ -1,4 +1,5 @@
-#! /usr/bin/env python
+""" Launch program Generator Difference """
+# ! /usr/bin/env python
 
 from gendiff.engine.parse import parsing_cli_arguments
 

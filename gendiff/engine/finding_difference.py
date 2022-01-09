@@ -1,3 +1,4 @@
+""" Creating representation difference. """
 VALUE_DELETED = 'deleted'
 VALUE_ADDED = 'added'
 VALUE_CHANGED = 'changed'
@@ -7,7 +8,7 @@ VALUE_CHILD = 'child'
 
 def creating_difference_segment(status, key, value1, value2=None, child=None):
     """
-    Функция аккумулятор ключей.
+    Функция-аккумулятор ключей.
     """
     collected_data = {
         'status': status,
