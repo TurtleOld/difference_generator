@@ -1,7 +1,11 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Difference Generator two files by Alexander Pavlov"
+classifiers = [
+    "Topic :: Software Development :: Difference Generator",
+]
+repository = "https://github.com/TurtleOld/python-project-lvl2"
 authors = ["Alexander <dev@pavlovteam.ru>"]
 packages = [
     { include = 'gendiff' },
