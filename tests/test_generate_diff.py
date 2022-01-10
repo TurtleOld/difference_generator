@@ -73,4 +73,6 @@ from gendiff import generate_diff
     ),
 ])
 def test_difference_generator(file1, file2, formats, expected):
-    assert generate_diff(file1, file2, formats) == open(expected, 'r').read()
+    with open(expected, 'r') as file:
+        result = file.read()
+        assert generate_diff(file1, file2, formats) == result
