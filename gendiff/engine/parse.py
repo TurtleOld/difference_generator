@@ -1,6 +1,6 @@
 """ Parsing command line arguments. """
 import argparse
-from gendiff import generate_diff
+from gendiff.scripts.gendiff import generate_diff
 
 DESCRIPTION = 'Difference generator'
 FORMAT_FLAG_1 = '-f'
@@ -24,4 +24,4 @@ def parsing_cli_arguments():
                         help=FORMAT_HELP,
                         default='stylish')
     args = parser.parse_args()
-    print(generate_diff(args.first_file, args.second_file, args.format))
+    return args

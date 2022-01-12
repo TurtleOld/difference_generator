@@ -36,7 +36,7 @@ def format_plain(diff, path=None):
                 '.'.join(path), converted_value(value[0]),
                 converted_value(value[1])
             ))
-        if status == finding_difference.VALUE_CHILD:
+        if status == finding_difference.VALUE_NESTED:
             result.append(format_plain(child, path))
         path.pop()
     return '\n'.join(result)

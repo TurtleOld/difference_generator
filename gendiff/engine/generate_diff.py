@@ -1,10 +1,9 @@
-""" Extract content files and main function package - generate_diff """
 from gendiff.engine.finding_difference import creating_difference
 from gendiff.formats.formats import FORMATS, FORMAT_FILES
 from gendiff.engine.parser_string import parsing_string_representation
 
 
-def extract_content_files(file_path):
+def get_file_content(file_path):
     """
     Извлечение содержимого из файла.
     :param file_path: Путь до файла.
@@ -22,6 +21,6 @@ def extract_content_files(file_path):
 
 def generate_diff(file_path1, file_path2, style='stylish'):
     """ Главная функция по выводу конечных данных. """
-    file1 = extract_content_files(file_path1)
-    file2 = extract_content_files(file_path2)
+    file1 = get_file_content(file_path1)
+    file2 = get_file_content(file_path2)
     return FORMATS[style](creating_difference(file1, file2))

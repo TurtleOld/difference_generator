@@ -56,7 +56,7 @@ def format_stylish(tree, depth=1):
     open_indent, close_indent = get_indent(depth)
 
     for item in tree:
-        status = finding_difference.get_status(item)
+        status = item['status']
         key = finding_difference.get_key(item)
         value = finding_difference.get_value(item)
         child = finding_difference.get_child(item)
@@ -79,7 +79,7 @@ def format_stylish(tree, depth=1):
                                           key,
                                           get_value(value[0], depth + 1)))
 
-        elif status == finding_difference.VALUE_CHILD:
+        elif status == finding_difference.VALUE_NESTED:
             result_data.append(get_string(open_indent,
                                           SYMBOL_UNCHANGED,
                                           key,

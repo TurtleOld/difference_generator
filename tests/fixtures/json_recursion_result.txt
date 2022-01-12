@@ -1,44 +1,44 @@
 [
   {
-    "status": "child",
+    "status": "nested",
     "key": "common",
     "value1": null,
     "value2": null,
-    "child": [
+    "nested": [
       {
         "status": "added",
         "key": "follow",
         "value1": false,
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
         "status": "unchanged",
         "key": "setting1",
         "value1": "Value 1",
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
         "status": "deleted",
         "key": "setting2",
         "value1": 200,
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
         "status": "changed",
         "key": "setting3",
         "value1": true,
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
         "status": "added",
         "key": "setting4",
         "value1": "blah blah",
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
         "status": "added",
@@ -47,26 +47,26 @@
           "key5": "value5"
         },
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
-        "status": "child",
+        "status": "nested",
         "key": "setting6",
         "value1": null,
         "value2": null,
-        "child": [
+        "nested": [
           {
-            "status": "child",
+            "status": "nested",
             "key": "doge",
             "value1": null,
             "value2": null,
-            "child": [
+            "nested": [
               {
                 "status": "changed",
                 "key": "wow",
                 "value1": "",
                 "value2": "so much",
-                "child": null
+                "nested": null
               }
             ]
           },
@@ -75,38 +75,38 @@
             "key": "key",
             "value1": "value",
             "value2": null,
-            "child": null
+            "nested": null
           },
           {
             "status": "added",
             "key": "ops",
             "value1": "vops",
             "value2": null,
-            "child": null
+            "nested": null
           }
         ]
       }
     ]
   },
   {
-    "status": "child",
+    "status": "nested",
     "key": "group1",
     "value1": null,
     "value2": null,
-    "child": [
+    "nested": [
       {
         "status": "changed",
         "key": "baz",
         "value1": "bas",
         "value2": "bars",
-        "child": null
+        "nested": null
       },
       {
         "status": "unchanged",
         "key": "foo",
         "value1": "bar",
         "value2": null,
-        "child": null
+        "nested": null
       },
       {
         "status": "changed",
@@ -115,7 +115,7 @@
           "key": "value"
         },
         "value2": "str",
-        "child": null
+        "nested": null
       }
     ]
   },
@@ -129,7 +129,7 @@
       }
     },
     "value2": null,
-    "child": null
+    "nested": null
   },
   {
     "status": "added",
@@ -143,6 +143,6 @@
       "fee": 100500
     },
     "value2": null,
-    "child": null
+    "nested": null
   }
 ]

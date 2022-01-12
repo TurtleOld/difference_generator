@@ -3,10 +3,10 @@ VALUE_DELETED = 'deleted'
 VALUE_ADDED = 'added'
 VALUE_CHANGED = 'changed'
 VALUE_UNCHANGED = 'unchanged'
-VALUE_CHILD = 'child'
+VALUE_NESTED = 'nested'
 
 
-def creating_difference_segment(status, key, value1, value2=None, child=None):
+def creating_difference_segment(status, key, value1, value2=None, nested=None):
     """
     Функция-аккумулятор ключей.
     """
@@ -15,7 +15,7 @@ def creating_difference_segment(status, key, value1, value2=None, child=None):
         'key': key,
         'value1': value1,
         'value2': value2,
-        'child': child
+        'nested': nested
     }
     return collected_data
 
@@ -48,11 +48,11 @@ def creating_difference(file_path1, file_path2):
         elif isinstance(file_path1[key], dict) and isinstance(file_path2[key],
                                                               dict):
             collected_data = creating_difference_segment(
-                VALUE_CHILD,
+                VALUE_NESTED,
                 key,
                 value1=None,
-                child=creating_difference(file_path1[key], file_path2[key]
-                                          )
+                nested=creating_difference(file_path1[key], file_path2[key]
+                                           )
             )
         else:
             collected_data = creating_difference_segment(VALUE_CHANGED, key,
@@ -81,4 +81,4 @@ def get_value(collected_data):
 
 def get_child(collected_data):
     """ Функция получения ключа Child(Ребёнок)"""
-    return collected_data.get('child', None)
+    return collected_data.get('nested', None)
