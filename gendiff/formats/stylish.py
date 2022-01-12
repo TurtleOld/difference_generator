@@ -83,7 +83,8 @@ def get_format_stylish(tree, depth=1):
             result_data.append(get_string(open_indent,
                                           SYMBOL_UNCHANGED,
                                           key,
-                                          get_format_stylish(nested, depth + 1)))
+                                          get_format_stylish(nested, depth + 1))
+                               )
 
         else:
             result_data.append(get_string(open_indent,
