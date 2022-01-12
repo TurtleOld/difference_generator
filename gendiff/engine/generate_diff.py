@@ -1,26 +1,15 @@
 from gendiff.engine.finding_difference import creating_difference
-from gendiff.formats.formats import FORMATS, FORMAT_FILES
+from gendiff.formats.formats import FORMATS
 from gendiff.engine.parser_string import parsing_string_representation
 
 
-def get_file_content(file_path):
-    """
-    Извлечение содержимого из файла.
-    :param file_path: Путь до файла.
-    :return: Расширение переданного файла
-    """
-    if file_path.endswith(FORMAT_FILES['json']):
-        with open(file_path, 'r') as file:
-            result = file.read()
-        return parsing_string_representation(result)
-    if file_path.endswith(FORMAT_FILES['yaml_yml']):
-        with open(file_path, 'r') as file:
-            result = file.read()
-        return parsing_string_representation(result)
-
-
-def generate_diff(file_path1, file_path2, style='stylish'):
+def generate_diff(file_path1, file_path2, output_format='stylish'):
     """ Главная функция по выводу конечных данных. """
-    file1 = get_file_content(file_path1)
-    file2 = get_file_content(file_path2)
-    return FORMATS[style](creating_difference(file1, file2))
+    with open(file_path1, 'r') as file1, open(file_path2, 'r') as file2:
+        result_content1 = file1.read()
+        result_content2 = file2.read()
+
+    return FORMATS[output_format](creating_difference(
+        parsing_string_representation(result_content1),
+        parsing_string_representation(result_content2)
+    ))

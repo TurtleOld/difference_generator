@@ -3,9 +3,9 @@ import json
 import yaml
 
 
-def parsing_string_representation(string):
-    if string.startswith('{'):
-        result = json.loads(string)
+def parsing_file_content(content):
+    if content.startswith('{') or content.startswith('['):
+        result = json.loads(content)
     else:
-        result = yaml.safe_load(string)
+        result = yaml.safe_load(content)
     return result

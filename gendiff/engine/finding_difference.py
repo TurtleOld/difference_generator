@@ -20,65 +20,48 @@ def creating_difference_segment(status, key, value1, value2=None, nested=None):
     return collected_data
 
 
-def creating_difference(file_path1, file_path2):
+def creating_difference(dictionary_1: dict, dictionary_2):
     """
     Функция создания разницы между данными двух файлов.
-    :param file_path1: Путь до файла.
-    :param file_path2: Путь до файла.
+    :param dictionary_1: Словарь.
+    :param dictionary_2: Словарь.
     :return: Список с результатом.
     """
-    keys1 = file_path1.keys()
-    keys2 = file_path2.keys()
+    keys1 = dictionary_1.keys()
+    keys2 = dictionary_2.keys()
     keys = keys1 | keys2
     list_result = []
 
-    for key in sorted(keys):
-        if key not in file_path1:
+    for dict_key in sorted(keys):
+        if dict_key not in dictionary_1:
             collected_data = creating_difference_segment(VALUE_ADDED,
-                                                         key,
-                                                         file_path2[key])
-        elif key not in file_path2:
+                                                         dict_key,
+                                                         dictionary_2[dict_key])
+        elif dict_key not in dictionary_2:
             collected_data = creating_difference_segment(VALUE_DELETED,
-                                                         key,
-                                                         file_path1[key])
-        elif file_path1[key] == file_path2[key]:
+                                                         dict_key,
+                                                         dictionary_1[dict_key])
+        elif dictionary_1[dict_key] == dictionary_2[dict_key]:
             collected_data = creating_difference_segment(VALUE_UNCHANGED,
-                                                         key,
-                                                         file_path1[key])
-        elif isinstance(file_path1[key], dict) and isinstance(file_path2[key],
-                                                              dict):
+                                                         dict_key,
+                                                         dictionary_1[dict_key])
+        elif isinstance(dictionary_1[dict_key], dict) and isinstance(
+                dictionary_2[dict_key], dict):
             collected_data = creating_difference_segment(
                 VALUE_NESTED,
-                key,
+                dict_key,
                 value1=None,
-                nested=creating_difference(file_path1[key], file_path2[key]
+                nested=creating_difference(dictionary_1[dict_key],
+                                           dictionary_2[dict_key]
                                            )
             )
         else:
-            collected_data = creating_difference_segment(VALUE_CHANGED, key,
-                                                         value1=file_path1[key],
-                                                         value2=file_path2[key])
+            collected_data = creating_difference_segment(VALUE_CHANGED,
+                                                         dict_key,
+                                                         value1=dictionary_1[
+                                                             dict_key],
+                                                         value2=dictionary_2[
+                                                             dict_key])
         list_result.append(collected_data)
 
     return list_result
-
-
-def get_status(collected_data):
-    """ Функция получения ключа Статус"""
-    return collected_data.get('status')
-
-
-def get_key(collected_data):
-    """ Функция получения ключа Ключ"""
-    return collected_data.get('key')
-
-
-def get_value(collected_data):
-    """ Функция получения ключей со значениями"""
-    value = (collected_data.get('value1'), collected_data.get('value2'))
-    return value
-
-
-def get_child(collected_data):
-    """ Функция получения ключа Child(Ребёнок)"""
-    return collected_data.get('nested', None)

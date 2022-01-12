@@ -1,6 +1,5 @@
 """ Parsing command line arguments. """
 import argparse
-from gendiff.scripts.gendiff import generate_diff
 
 DESCRIPTION = 'Difference generator'
 FORMAT_FLAG_1 = '-f'
