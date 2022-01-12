@@ -1,34 +1,34 @@
 [
   {
-    "status": "deleted",
+    "type": "deleted",
     "key": "follow",
     "value1": false,
     "value2": null,
     "nested": null
   },
   {
-    "status": "unchanged",
+    "type": "unchanged",
     "key": "host",
     "value1": "hexlet.io",
     "value2": null,
     "nested": null
   },
   {
-    "status": "deleted",
+    "type": "deleted",
     "key": "proxy",
     "value1": "123.234.53.22",
     "value2": null,
     "nested": null
   },
   {
-    "status": "changed",
+    "type": "changed",
     "key": "timeout",
     "value1": 50,
     "value2": 20,
     "nested": null
   },
   {
-    "status": "added",
+    "type": "added",
     "key": "verbose",
     "value1": true,
     "value2": null,

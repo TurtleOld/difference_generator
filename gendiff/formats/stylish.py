@@ -50,40 +50,40 @@ def get_value(item, depth):
     return '\n'.join(result)
 
 
-def format_stylish(tree, depth=1):
+def get_format_stylish(tree, depth=1):
     """ Построение формата stylish. """
     result_data = ['{']
     open_indent, close_indent = get_indent(depth)
 
     for item in tree:
-        status = item['status']
-        key = finding_difference.get_key(item)
-        value = finding_difference.get_value(item)
-        child = finding_difference.get_child(item)
+        type_vertex = item['type']
+        key = item['key']
+        value = item['value1'], item['value2']
+        nested = item['nested']
 
-        if status == finding_difference.VALUE_DELETED:
+        if type_vertex == finding_difference.VALUE_DELETED:
             result_data.append(get_string(open_indent,
                                           SYMBOL_DELETED,
                                           key,
                                           get_value(value[0], depth + 1)))
 
-        elif status == finding_difference.VALUE_ADDED:
+        elif type_vertex == finding_difference.VALUE_ADDED:
             result_data.append(get_string(open_indent,
                                           SYMBOL_ADDED,
                                           key,
                                           get_value(value[0], depth + 1)))
 
-        elif status == finding_difference.VALUE_UNCHANGED:
+        elif type_vertex == finding_difference.VALUE_UNCHANGED:
             result_data.append(get_string(open_indent,
                                           SYMBOL_UNCHANGED,
                                           key,
                                           get_value(value[0], depth + 1)))
 
-        elif status == finding_difference.VALUE_NESTED:
+        elif type_vertex == finding_difference.VALUE_NESTED:
             result_data.append(get_string(open_indent,
                                           SYMBOL_UNCHANGED,
                                           key,
-                                          format_stylish(child, depth + 1)))
+                                          get_format_stylish(nested, depth + 1)))
 
         else:
             result_data.append(get_string(open_indent,

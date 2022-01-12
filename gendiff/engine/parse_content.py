@@ -3,7 +3,7 @@ import json
 import yaml
 
 
-def parsing_file_content(content):
+def parse_file_content(content):
     if content.startswith('{') or content.startswith('['):
         result = json.loads(content)
     else:

@@ -1,13 +1,13 @@
 """ Launch program Generator Difference """
 # ! /usr/bin/env python
 
-from gendiff.engine.parse import parsing_cli_arguments
+from gendiff.engine.parse_arg_cli import parse_cli_arguments
 from gendiff.engine.generate_diff import generate_diff
 
 
 def main():
     """ Главная функция по запуску пакета. """
-    args = parsing_cli_arguments()
+    args = parse_cli_arguments()
     print(generate_diff(args.first_file, args.second_file, args.format))
 
 

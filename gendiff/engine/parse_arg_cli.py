@@ -10,7 +10,7 @@ VERSION_STRING_2 = '--version'
 VERSION_NUMBER = '{0} 1.0'.format(DESCRIPTION)
 
 
-def parsing_cli_arguments():
+def parse_cli_arguments():
     """
     Функция по парсингу аргументов командой строки
     """

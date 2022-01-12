@@ -1,6 +1,6 @@
-from gendiff.engine.finding_difference import creating_difference
+from gendiff.engine.finding_difference import create_tree_vertex
 from gendiff.formats.formats import FORMATS
-from gendiff.engine.parser_string import parsing_string_representation
+from gendiff.engine.parse_content import parse_file_content
 
 
 def generate_diff(file_path1, file_path2, output_format='stylish'):
@@ -9,7 +9,7 @@ def generate_diff(file_path1, file_path2, output_format='stylish'):
         result_content1 = file1.read()
         result_content2 = file2.read()
 
-    return FORMATS[output_format](creating_difference(
-        parsing_string_representation(result_content1),
-        parsing_string_representation(result_content2)
+    return FORMATS[output_format](create_tree_vertex(
+        parse_file_content(result_content1),
+        parse_file_content(result_content2)
     ))
