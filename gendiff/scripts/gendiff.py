@@ -1,7 +1,7 @@
 """ Launch program Generator Difference """
 # ! /usr/bin/env python
 
-from gendiff.engine.parse_arg_cli import parse_cli_arguments
+from gendiff.engine.parse_cli_args import parse_cli_arguments
 from gendiff.engine.generate_diff import generate_diff
 
 
