@@ -21,12 +21,6 @@ def get_indent(depth: int) -> tuple:
     return open_indent, close_indent
 
 
-def get_string(indent: int, symbol: str, key: str, value: str) -> str:
-    """ Получение строки. """
-    return TEMPLATE_STRING.format(indent=indent, symbol=symbol, key=key,
-                                  value=value)
-
-
 def get_value(item, depth) -> str:
     """ Получение значения. """
     result = []
@@ -36,10 +30,11 @@ def get_value(item, depth) -> str:
     if isinstance(item, dict):
         result.append('{')
         for key, value in item.items():
-            result.append(get_string(open_indent,
-                                     SYMBOL_UNCHANGED,
-                                     key,
-                                     get_value(value, depth + 1)))
+            result.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_UNCHANGED,
+                key=key, value=get_value(value, depth + 1)
+            ))
+
         result.append(close_indent + '}')
     elif isinstance(item, bool):
         result.append(str(item).lower())
@@ -62,39 +57,38 @@ def get_format_stylish(tree: list, depth=1) -> str:
         nested = item['nested']
 
         if type_vertex == finding_difference.VALUE_DELETED:
-            result_data.append(get_string(open_indent,
-                                          SYMBOL_DELETED,
-                                          key,
-                                          get_value(value[0], depth + 1)))
+            result_data.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_DELETED, key=key,
+                value=get_value(value[0], depth + 1)
+            ))
 
         elif type_vertex == finding_difference.VALUE_ADDED:
-            result_data.append(get_string(open_indent,
-                                          SYMBOL_ADDED,
-                                          key,
-                                          get_value(value[0], depth + 1)))
+            result_data.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_ADDED, key=key,
+                value=get_value(value[0], depth + 1)
+            ))
 
         elif type_vertex == finding_difference.VALUE_UNCHANGED:
-            result_data.append(get_string(open_indent,
-                                          SYMBOL_UNCHANGED,
-                                          key,
-                                          get_value(value[0], depth + 1)))
+            result_data.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_UNCHANGED, key=key,
+                value=get_value(value[0], depth + 1)
+            ))
 
         elif type_vertex == finding_difference.VALUE_NESTED:
-            result_data.append(get_string(open_indent,
-                                          SYMBOL_UNCHANGED,
-                                          key,
-                                          get_format_stylish(nested, depth + 1))
-                               )
+            result_data.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_UNCHANGED, key=key,
+                value=get_format_stylish(nested, depth + 1)
+            ))
 
         else:
-            result_data.append(get_string(open_indent,
-                                          SYMBOL_DELETED,
-                                          key,
-                                          get_value(value[0], depth + 1)))
-            result_data.append(get_string(open_indent,
-                                          SYMBOL_ADDED,
-                                          key,
-                                          get_value(value[1], depth + 1)))
+            result_data.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_DELETED, key=key,
+                value=get_value(value[0], depth + 1)
+            ))
+            result_data.append('{indent}{symbol} {key}: {value}'.format(
+                indent=open_indent, symbol=SYMBOL_ADDED, key=key,
+                value=get_value(value[1], depth + 1)
+            ))
 
     result_data.append(close_indent + '}')
     return '\n'.join(result_data)
