@@ -11,7 +11,7 @@ SYMBOL_DELETED = '-'
 SYMBOL_UNCHANGED = ' '
 
 
-def get_indent(depth):
+def get_indent(depth: int) -> tuple:
     """
     Функция по определению начального и конечного отступа.
     """
@@ -21,13 +21,13 @@ def get_indent(depth):
     return open_indent, close_indent
 
 
-def get_string(indent, symbol, key, value):
+def get_string(indent: int, symbol: str, key: str, value: str) -> str:
     """ Получение строки. """
     return TEMPLATE_STRING.format(indent=indent, symbol=symbol, key=key,
                                   value=value)
 
 
-def get_value(item, depth):
+def get_value(item, depth) -> str:
     """ Получение значения. """
     result = []
 
@@ -50,7 +50,7 @@ def get_value(item, depth):
     return '\n'.join(result)
 
 
-def get_format_stylish(tree, depth=1):
+def get_format_stylish(tree: list, depth=1) -> str:
     """ Построение формата stylish. """
     result_data = ['{']
     open_indent, close_indent = get_indent(depth)
