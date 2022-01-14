@@ -55,8 +55,6 @@ def get_converted_value(value):
             collecting = '[complex value]'
         else:
             collecting = json.dumps(value[0])
-    elif type(value) is int:
-        collecting = '{0}'.format(value)
     elif type(value) is str:
         collecting = "'{0}'".format(value)
     elif type(value) is dict:

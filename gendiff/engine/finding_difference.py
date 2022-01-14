@@ -7,7 +7,7 @@ VALUE_UNCHANGED = 'unchanged'
 VALUE_NESTED = 'nested'
 
 
-def create_tree_vertex(dictionary_1: dict, dictionary_2: dict) -> list:
+def create_tree_vertices(dictionary_1: dict, dictionary_2: dict) -> list:
     """
     Функция создания разницы между данными двух файлов.
     :param dictionary_1: Словарь.
@@ -42,9 +42,9 @@ def create_tree_vertex(dictionary_1: dict, dictionary_2: dict) -> list:
                 dictionary_2[dict_key], dict):
             children = {'type': VALUE_NESTED, 'key': dict_key,
                         'value1': None, 'value2': None,
-                        'nested': create_tree_vertex(dictionary_1[dict_key],
-                                                     dictionary_2[dict_key]
-                                                     )}
+                        'nested': create_tree_vertices(dictionary_1[dict_key],
+                                                       dictionary_2[dict_key]
+                                                       )}
         else:
             children = {'type': VALUE_CHANGED, 'key': dict_key,
                         'value1': dictionary_1[dict_key],
