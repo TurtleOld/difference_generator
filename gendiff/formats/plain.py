@@ -11,8 +11,6 @@ def get_format_plain(tree, path):
     :param path: Путь ключей.
     :return: строки с данными
     """
-    if path is None:
-        path = []
 
     result = []
 
