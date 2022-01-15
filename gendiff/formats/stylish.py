@@ -1,4 +1,6 @@
 """ Stylish Format """
+import json
+
 from gendiff.engine import finding_difference
 
 COUNT_INDENT = 4
@@ -36,12 +38,10 @@ def get_value(item, depth) -> str:
             ))
 
         result.append(close_indent + '}')
-    elif isinstance(item, bool):
-        result.append(str(item).lower())
-    elif item is None:
-        result.append('null')
-    else:
+    elif isinstance(item, str):
         result.append(str(item))
+    else:
+        result.append(json.dumps(item))
     return '\n'.join(result)
 
 
