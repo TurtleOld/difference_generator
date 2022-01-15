@@ -3,7 +3,7 @@ import json
 from gendiff.engine import finding_difference
 
 
-def get_format_plain(tree, path=None):
+def get_format_plain(tree, path):
     """
     Функция по переводу словаря данных в строки с указанием тех данных,
     которые изменились.
@@ -40,6 +40,10 @@ def get_format_plain(tree, path=None):
             result.append(get_format_plain(nested, path))
         path.pop()
     return '\n'.join(result)
+
+
+def render(diff):
+    return get_format_plain(diff, [])
 
 
 def get_converted_value(value):

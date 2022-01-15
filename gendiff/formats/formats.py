@@ -4,7 +4,7 @@ from gendiff.formats import stylish, plain, json
 
 FORMATS = {
     'stylish': stylish.get_format_stylish,
-    'plain': plain.get_format_plain,
+    'plain': plain.test,
     'json': json.get_format_json
 }
 
