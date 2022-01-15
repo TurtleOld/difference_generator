@@ -3,11 +3,11 @@ import json
 from gendiff.engine import finding_difference
 
 
-def get_format_plain(tree, path):
+def get_format_plain(tree: list[dict], path: list) -> str:
     """
     Функция по переводу словаря данных в строки с указанием тех данных,
     которые изменились.
-    :param tree: Переданный словарь.
+    :param tree: Переданный список с вложенными словарями.
     :param path: Путь ключей.
     :return: строки с данными
     """
@@ -41,6 +41,7 @@ def get_format_plain(tree, path):
 
 
 def render(diff):
+    """ Рендеринг функции get_format_plain. """
     return get_format_plain(diff, [])
 
 

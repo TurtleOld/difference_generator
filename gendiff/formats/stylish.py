@@ -45,11 +45,10 @@ def get_value(item, depth) -> str:
     return '\n'.join(result)
 
 
-def get_format_stylish(tree: list, depth) -> str:
+def get_format_stylish(tree: list, depth: int) -> str:
     """ Построение формата stylish. """
     result_data = ['{']
     open_indent, close_indent = get_indent(depth)
-
     for item in tree:
         type_vertex = item['type']
         key = item['key']
@@ -94,5 +93,6 @@ def get_format_stylish(tree: list, depth) -> str:
     return '\n'.join(result_data)
 
 
-def render(diff):
+def render(diff: list[dict]) -> str:
+    """ Рендеринг функции get_format_stylish. """
     return get_format_stylish(diff, 1)
