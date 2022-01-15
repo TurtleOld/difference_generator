@@ -93,6 +93,6 @@ def get_format_stylish(tree: list, depth: int) -> str:
     return '\n'.join(result_data)
 
 
-def render(diff: list[dict]) -> str:
+def render(diff: list) -> str:
     """ Рендеринг функции get_format_stylish. """
     return get_format_stylish(diff, 1)
